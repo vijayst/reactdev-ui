@@ -10,3 +10,16 @@
   background-color: #f0f0f0;
   height: 8rem;
 }
+
+.login-section {
+  padding: 2rem;
+}
+
+.login-section button {
+  width: 100%;
+}
+
+.intro-section {
+  padding: 2rem;
+  font-size: 2rem;
+}
