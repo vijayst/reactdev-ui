@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Col, Button } from 'antd';
-import Auth from './Auth';
+import auth from '../lib/auth';
 
 class SideBar extends Component {
     handleLogin() {
-        const auth = new Auth();
         auth.login();
     }
 
