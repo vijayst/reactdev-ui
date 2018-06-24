@@ -13,13 +13,10 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <header className="header">
-          <h1>React Developers</h1>
-        </header>
         <Row>
-          <Col span={6}>
+          <Col span={6} className="sidebar">
             <div className="login-section">
-              <Button title="Login" onClick={this.handleLogin.bind(this)}>
+              <Button title="Login" size="large" onClick={this.handleLogin.bind(this)}>
                 Login
               </Button>
             </div>
@@ -28,8 +25,10 @@ class App extends Component {
               Register today and invite your peers.
             </div>
           </Col>
-          <Col span={18}>
-            
+          <Col span={18} className="content">
+          <header className="header">
+          <h1>React Developers</h1>
+        </header>
           </Col>
         </Row>
       </div>
