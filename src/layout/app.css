@@ -21,6 +21,22 @@
   border-right: 1px solid #f0f0f0;
 }
 
+.logout-section {
+  margin-top: 10rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-section > div {
+  font-size: 2rem;
+}
+
+.logout-section > button {
+  width: 15rem;
+}
+
 .login-section {
   margin-top: 10rem;
   padding: 2rem;

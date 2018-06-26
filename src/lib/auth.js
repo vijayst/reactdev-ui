@@ -38,6 +38,24 @@ class Auth {
     history.replace('/');
   }
 
+  getAccessToken() {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('No access token found');
+    }
+    return accessToken;
+  }
+
+  getProfile(cb) {
+    let accessToken = this.getAccessToken();
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if (profile) {
+        this.userProfile = profile;
+      }
+      cb(err, profile);
+    });
+  }
+
   logout() {
     // Clear access token and ID token from local storage
     localStorage.removeItem('access_token');
