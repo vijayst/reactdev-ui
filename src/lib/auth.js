@@ -39,15 +39,12 @@ class Auth {
   }
 
   getAccessToken() {
-    const accessToken = localStorage.getItem('access_token');
-    if (!accessToken) {
-      throw new Error('No access token found');
-    }
-    return accessToken;
+    return localStorage.getItem('access_token');
   }
 
   getProfile(cb) {
     let accessToken = this.getAccessToken();
+    if (!accessToken) return cb('Invalid access token');
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
         this.userProfile = profile;

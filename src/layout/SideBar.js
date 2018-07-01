@@ -7,7 +7,7 @@ class SideBar extends Component {
         super();
         this.state = {
             profile: {},
-            isAuthenticated: auth.isAuthenticated
+            isAuthenticated: auth.isAuthenticated()
         };
     }
 
@@ -33,7 +33,7 @@ class SideBar extends Component {
             <Col span={6} className="sidebar">
                 {this.state.isAuthenticated ? (
                     <div className="logout-section">
-                        <div>{this.state.profile.name}</div>
+                        <div>{this.state.profile && this.state.profile.name}</div>
                         <Button title="Logout" size="large" onClick={this.handleLogout.bind(this)}>
                             Logout
                         </Button>
