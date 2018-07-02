@@ -2,10 +2,6 @@
   "name": "reactdev-ui",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "npm": "5.6.0",
-    "node": "8.9.4"
-  },
   "dependencies": {
     "antd": "^3.6.4",
     "auth0-js": "^9.6.1",
