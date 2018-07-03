@@ -5,7 +5,7 @@ class Auth {
   auth0 = new auth0.WebAuth({
     domain: 'react-dev.auth0.com',
     clientID: 'kAa3fD3HbbnInvfMk378U381vmYRfPbj',
-    redirectUri: 'http://localhost:3000/callback',
+    redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://reactdev.org/callback',
     audience: 'https://react-dev.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile'
