@@ -19,7 +19,13 @@ class Auth {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        history.replace('/');
+        const altRedirectUrl = localStorage.getItem('alt_redirect_uri');
+        if (altRedirectUrl) {
+          history.replace(altRedirectUrl);
+          localStorage.removeItem('alt_redirect_uri');
+        } else {
+          history.replace('/');
+        }
       } else if (err) {
         history.replace('/');
         console.log(err);

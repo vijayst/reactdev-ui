@@ -3,6 +3,7 @@ import { Col } from 'antd';
 import Profile from '../profile/Profile';
 import ProfileEdit from '../profile/ProfileEdit';
 import { Switch, Route } from 'react-router-dom';
+import requireAuth from './requireAuth';
 
 class Content extends Component {
     render() {
@@ -12,8 +13,8 @@ class Content extends Component {
                     <h1>React Developers</h1>
                 </header>
                 <Switch>
-                    <Route path="/profile" component={Profile} />
-                    <Route path="/profile/edit" component={ProfileEdit} />
+                    <Route path="/profile" component={requireAuth(Profile)} />
+                    <Route path="/profile/edit" component={requireAuth(ProfileEdit)} />
                 </Switch>
             </Col>
         );
