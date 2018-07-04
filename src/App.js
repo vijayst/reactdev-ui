@@ -1,6 +1,7 @@
 import React from 'react'
 import {
     Router,
+    Switch,
     Route
 } from 'react-router-dom';
 import Main from './layout/Main';
@@ -10,8 +11,10 @@ import history from './lib/history';
 const App = () => (
     <Router history={history}>
         <div className="app">
-            <Route exact path="/" component={Main} />
-            <Route path="/callback" component={Callback} />
+            <Switch>
+                <Route exact path="/callback" component={Callback} />
+                <Route component={Main} />
+            </Switch>
         </div>
     </Router>
 )
