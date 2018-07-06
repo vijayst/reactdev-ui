@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
+import { Tabs } from 'antd';
+import PersonalInfoEdit from './PersonalInfoEdit';
+import ExperienceEdit from './ExperienceEdit';
+import AvailabilityEdit from './AvailabilityEdit';
 
 export default class ProfileEdit extends Component {
     render() {
         return (
-            <div>Hello world</div>
+            <Tabs defaultActiveKey="1">
+                <Tabs.TabPane tab="Personal Info" key="1">
+                    <PersonalInfoEdit />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Experience" key="2">
+                    <ExperienceEdit />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Availability" key="3">
+                    <AvailabilityEdit />
+                </Tabs.TabPane>
+            </Tabs>
         );
     }
 }

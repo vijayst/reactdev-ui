@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class PersonalInfo extends Component {
     render() {
         return (
-            <div className="personal-info-container">
+            <div className="personal-info-edit-container">
                 <div>First name:</div>
                 <div>Vijay</div>
                 <div>Last name:</div>

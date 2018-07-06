@@ -3,6 +3,7 @@ import { Tabs } from 'antd';
 import PersonalInfo from './PersonalInfo';
 import Experience from './Experience';
 import Availability from './Availability';
+import './profile.css';
 
 export default class Profile extends Component {
     render() {
