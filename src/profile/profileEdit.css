@@ -16,12 +16,16 @@
     padding: 2rem;
 }
 
-.experience-grid {
+.experience-edit-container .experience-grid {
     display: grid;
     grid-template-columns: max-content 30rem;
     grid-row-gap: 1rem;
     grid-column-gap: 2rem;
     align-items: center;
+}
+
+.experience-edit-container .projects-section {
+    margin-top: 2rem;
 }
 
 .availability-edit-container {

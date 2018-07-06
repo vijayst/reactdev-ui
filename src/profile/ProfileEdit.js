@@ -3,6 +3,7 @@ import { Tabs } from 'antd';
 import PersonalInfoEdit from './PersonalInfoEdit';
 import ExperienceEdit from './ExperienceEdit';
 import AvailabilityEdit from './AvailabilityEdit';
+import './profileEdit.css';
 
 export default class ProfileEdit extends Component {
     render() {

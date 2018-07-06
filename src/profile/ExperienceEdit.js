@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
-import { Input, Select } from 'antd'; 
+import { Input, Select, Table } from 'antd';
 
 export default class Experience extends Component {
     render() {
+        const columns = [{
+            title: 'Project Name',
+            dataIndex: 'name',
+            key: 'name',
+          }, {
+            title: 'Type',
+            dataIndex: 'type',
+            key: 'type',
+          }, {
+            title: 'Client',
+            dataIndex: 'client',
+            key: 'client',
+          }, {
+              title: 'Duration',
+              dataIndex: 'duration',
+              key: 'duration'
+          }];
         return (
-            <div className="experience-container">
+            <div className="experience-edit-container">
                 <div className="experience-grid">
                     <div>Professional Experience:</div>
                     <div><Select style={{ width: 300 }} /></div>
@@ -16,18 +33,8 @@ export default class Experience extends Component {
                     <div><Input placeholder="LinkedIn URL" /></div>
                 </div>
                 <div className="projects-section">
-                    <h2>Client projects</h2>
-                    <ul>
-                        <li>Project 1</li>
-                        <li>Project 2</li>
-                    </ul>
-                </div>
-                <div className="projects-section">
-                    <h2>Personal projects</h2>
-                    <ul>
-                        <li>Project 1</li>
-                        <li>Project 2</li>
-                    </ul>
+                    <h2>Projects</h2>
+                    <Table columns={columns} />
                 </div>
             </div>
         );

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Input, Upload, Icon, DatePicker, Select } from 'antd';
-import './profileEdit.css';
 
 export default class PersonalInfoEdit extends Component {
     state = {};
