@@ -21,6 +21,10 @@
   border-right: 1px solid #f0f0f0;
 }
 
+main {
+  padding: 2rem;
+}
+
 .logout-section {
   margin-top: 10rem;
   padding: 2rem;

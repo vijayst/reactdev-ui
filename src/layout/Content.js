@@ -12,10 +12,12 @@ class Content extends Component {
                 <header className="header">
                     <h1>React Developers</h1>
                 </header>
-                <Switch>
-                    <Route path="/profile" component={requireAuth(Profile)} />
-                    <Route path="/profile/edit" component={requireAuth(ProfileEdit)} />
-                </Switch>
+                <main>
+                    <Switch>
+                        <Route path="/profile" component={requireAuth(Profile)} />
+                        <Route path="/profile/edit" component={requireAuth(ProfileEdit)} />
+                    </Switch>
+                </main>
             </Col>
         );
     }
