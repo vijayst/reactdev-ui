@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
+import { Input, InputNumber, Select, Switch, DatePicker } from 'antd';
 
-export default class Availability extends Component {
+export default class AvailabilityEdit extends Component {
     render() {
         return (
-            <div className="availability-container">
+            <div className="availability-edit-container">
                 <div className="availability-grid">
                     <div>Available:</div>
-                    <div>Yes</div>
+                    <div><Switch /></div>
                     <div>Next Available Date:</div>
-                    <div></div>
+                    <div><DatePicker /></div>
                     <div>Minimum Hours:</div>
-                    <div>20 hours /week</div>
-                    <div>Work Type:</div>
-                    <div>Hourly</div>
+                    <div><Select style={{ width: 300 }} /></div>
+                    <div>Preferred Work Type:</div>
+                    <div><Select style={{ width: 300 }} /></div>
                     <div>Hourly Rate:</div>
-                    <div>$30 /hour</div>
-                </div>
-                <div className="notes-section">
-                    <h2>Notes:</h2>
-                    <div>Some Free text here</div>
+                    <div><InputNumber /></div>
+                    <div>Notes:</div>
+                    <div><Input.TextArea /></div>
                 </div>
             </div>
         );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Select, Table } from 'antd';
 
-export default class Experience extends Component {
+export default class ExperienceEdit extends Component {
     render() {
         const columns = [{
             title: 'Project Name',

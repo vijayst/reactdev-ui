@@ -32,13 +32,9 @@
     padding: 2rem;
 }
 
-.availability-grid {
+.availability-edit-container .availability-grid {
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: max-content 30rem;
     grid-row-gap: 1rem;
     grid-column-gap: 2rem;
-}
-
-.notes-section {
-    margin-top: 2rem;
 }
