@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
+import { Input } from 'antd';
+import './profileEdit.css';
 
-export default class PersonalInfo extends Component {
+export default class PersonalInfoEdit extends Component {
     render() {
         return (
             <div className="personal-info-edit-container">
                 <div>First name:</div>
-                <div>Vijay</div>
+                <div><Input placeholder="First name" /></div>
                 <div>Last name:</div>
-                <div>Thirugnanam</div>
+                <div><Input placeholder="Last name" /></div>
                 <div>Email:</div>
-                <div>vijayst@gmail.com</div>
+                <div><Input placeholder="Email" /></div>
                 <div>Photo:</div>
                 <div></div>
                 <div>City:</div>
-                <div>Bangalore</div>
+                <div><Input placeholder="City" /></div>
                 <div>Country:</div>
-                <div>India</div>
+                <div><Input placeholder="Country" /></div>
                 <div>Date of Birth:</div>
-                <div>15-Mar-1977</div>
+                <div><Input placeholder="Date of Birth" /></div>
             </div>
         );
     }

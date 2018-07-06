@@ -14,8 +14,8 @@ class Content extends Component {
                 </header>
                 <main>
                     <Switch>
-                        <Route path="/profile" component={requireAuth(Profile)} />
                         <Route path="/profile/edit" component={requireAuth(ProfileEdit)} />
+                        <Route path="/profile" component={requireAuth(Profile)} />
                     </Switch>
                 </main>
             </Col>
