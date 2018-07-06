@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Input, Select } from 'antd'; 
 
 export default class Experience extends Component {
     render() {
@@ -6,13 +7,13 @@ export default class Experience extends Component {
             <div className="experience-container">
                 <div className="experience-grid">
                     <div>Professional Experience:</div>
-                    <div>20 years</div>
+                    <div><Select style={{ width: 300 }} /></div>
                     <div>React Experience:</div>
-                    <div>3 years</div>
+                    <div><Select style={{ width: 300 }} /></div>
                     <div>GitHub:</div>
-                    <div>vijayst</div>
+                    <div><Input placeholder="GitHub URL" /></div>
                     <div>LinkedIn:</div>
-                    <div>vijayst</div>
+                    <div><Input placeholder="LinkedIn URL" /></div>
                 </div>
                 <div className="projects-section">
                     <h2>Client projects</h2>

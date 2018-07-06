@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Upload, Icon, DatePicker } from 'antd';
+import { Input, Upload, Icon, DatePicker, Select } from 'antd';
 import './profileEdit.css';
 
 export default class PersonalInfoEdit extends Component {
@@ -35,7 +35,7 @@ export default class PersonalInfoEdit extends Component {
                 <div>City:</div>
                 <div><Input placeholder="City" /></div>
                 <div>Country:</div>
-                <div><Input placeholder="Country" /></div>
+                <div><Select style={{ width: 300 }} /></div>
                 <div>Date of Birth:</div>
                 <div><DatePicker placeholder="Date of Birth" /></div>
             </div>
