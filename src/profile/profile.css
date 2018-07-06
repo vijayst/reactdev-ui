@@ -6,12 +6,12 @@
     grid-column-gap: 2rem;
 }
 
-.photo {
+.personal-info-container .photo {
     grid-column: 1 / 2;
     grid-row: 1 / 7;
 }
 
-.photo img {
+.personal-info-container .photo img {
     border-radius: 50%;
     width: 20rem;
     height: 20rem;

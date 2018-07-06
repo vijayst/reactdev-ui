@@ -1,10 +1,15 @@
 .personal-info-edit-container {
     padding: 2rem;
     display: grid;
-    grid-template-columns: max-content 30rem;
+    grid-template-columns: 20rem max-content 30rem;
     grid-row-gap: 1rem;
     grid-column-gap: 2rem;
     align-items: center;
+}
+
+.personal-info-edit-container .photo {
+    grid-row: 1 / 7;
+    grid-column: 1 / 2;
 }
 
 .experience-edit-container {
