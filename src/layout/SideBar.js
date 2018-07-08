@@ -27,7 +27,6 @@ class SideBar extends Component {
     }
 
     handleMenuClick({ key }) {
-        console.log(key);
         this.props.history.push(routes[key]);
     }
 
@@ -41,12 +40,25 @@ class SideBar extends Component {
         this.props.history.replace('/');
     }
 
+    getDefaultSelectedKeys() {
+        const openKeys = [];
+        Object.keys(routes)
+        .forEach(key => {
+            if (routes[key] === this.props.location.pathname) {
+                openKeys.push(key);
+            }
+        });
+        console.log('open keys', openKeys, this.props.location.pathname);
+        return openKeys;
+    }
+
     render() {
+        const { profile, isAuthenticated } = this.state;
         return (
             <Col span={6} className="sidebar">
-                {this.state.isAuthenticated ? (
+                {isAuthenticated ? (
                     <div className="logout-section">
-                        <div>{this.state.profile && this.state.profile.name}</div>
+                        <div>{profile && profile.name}</div>
                         <Button title="Logout" size="large" onClick={this.handleLogout.bind(this)}>
                             Logout
                         </Button>
@@ -62,10 +74,10 @@ class SideBar extends Component {
                     React Developers is a site for remote / freelance developers who want to advertise their skills for potential clients and peer developers.
                     Register today and invite your peers.
                 </div>
-                <Menu onClick={this.handleMenuClick.bind(this)}>
+                <Menu onClick={this.handleMenuClick.bind(this)} defaultSelectedKeys={this.getDefaultSelectedKeys()} style={{ marginTop: 30 }}>
                     <Menu.Item key="home">Home</Menu.Item>
                     <Menu.Item key="search">Search</Menu.Item>
-                    <Menu.Item key="myProfile">My Profile</Menu.Item>
+                    {isAuthenticated && <Menu.Item key="myProfile">My Profile</Menu.Item>}
                 </Menu>
             </Col>
         );
