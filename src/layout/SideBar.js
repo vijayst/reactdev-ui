@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
-import { Col, Button } from 'antd';
+import { Col, Button, Menu } from 'antd';
 import auth from '../lib/auth';
+import { withRouter } from 'react-router-dom';
+
+const routes = {
+    home: '/',
+    search: '/search',
+    myProfile: '/profile'
+};
 
 class SideBar extends Component {
     constructor() {
@@ -19,6 +26,11 @@ class SideBar extends Component {
         }
     }
 
+    handleMenuClick({ key }) {
+        console.log(key);
+        this.props.history.push(routes[key]);
+    }
+
     handleLogin() {
         auth.login();
     }
@@ -26,6 +38,7 @@ class SideBar extends Component {
     handleLogout() {
         auth.logout();
         this.setState({ isAuthenticated: false });
+        this.props.history.replace('/');
     }
 
     render() {
@@ -49,9 +62,14 @@ class SideBar extends Component {
                     React Developers is a site for remote / freelance developers who want to advertise their skills for potential clients and peer developers.
                     Register today and invite your peers.
                 </div>
+                <Menu onClick={this.handleMenuClick.bind(this)}>
+                    <Menu.Item key="home">Home</Menu.Item>
+                    <Menu.Item key="search">Search</Menu.Item>
+                    <Menu.Item key="myProfile">My Profile</Menu.Item>
+                </Menu>
             </Col>
         );
     }
 }
 
-export default SideBar;
+export default withRouter(SideBar);
