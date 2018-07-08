@@ -48,7 +48,6 @@ class SideBar extends Component {
                 openKeys.push(key);
             }
         });
-        console.log('open keys', openKeys, this.props.location.pathname);
         return openKeys;
     }
 
