@@ -37,4 +37,5 @@
     grid-template-columns: max-content 30rem;
     grid-row-gap: 1rem;
     grid-column-gap: 2rem;
+    align-items: center;
 }
