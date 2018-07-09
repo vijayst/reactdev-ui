@@ -5,7 +5,7 @@ export default class PersonalInfoEdit extends Component {
     state = {};
 
     render() {
-        const { imageUrl, loading } = this.state;
+        const { imageUrl } = this.state;
         return (
             <div className="personal-info-edit-container">
                 <div className="photo">

@@ -29,8 +29,8 @@ export default class ExperienceEdit extends Component {
             'Less than One Year',
             '1 Year'
         ];
-        console.log(moment.duration(moment().diff(moment('2013-03-01'))).years());
-        for (let i = 2; i <= 30; i++) {
+        const maxYears = moment.duration(moment().diff(moment('2013-03-01'))).years();
+        for (let i = 2; i <= maxYears; i++) {
             options.push(`${i} Years`);
         }
         return options;
@@ -54,15 +54,25 @@ export default class ExperienceEdit extends Component {
               dataIndex: 'duration',
               key: 'duration'
           }];
-        this.getProfessionalExperienceOptions();
-        this.getReactExperienceOptions();
         return (
             <div className="experience-edit-container">
                 <div className="experience-grid">
                     <div>Professional Experience:</div>
-                    <div><Select style={{ width: 300 }} /></div>
+                    <div>
+                        <Select style={{ width: 300 }}>
+                            {this.getProfessionalExperienceOptions().map(option => (
+                                <Select.Option key={option}>{option}</Select.Option>
+                            ))}
+                        </Select>
+                    </div>
                     <div>React Experience:</div>
-                    <div><Select style={{ width: 300 }} /></div>
+                    <div>
+                        <Select style={{ width: 300 }}>
+                            {this.getReactExperienceOptions().map(option => (
+                                <Select.Option key={option}>{option}</Select.Option>
+                            ))}
+                        </Select>
+                    </div>
                     <div>GitHub:</div>
                     <div><Input placeholder="GitHub URL" /></div>
                     <div>LinkedIn:</div>
