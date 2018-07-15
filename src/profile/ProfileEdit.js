@@ -16,6 +16,7 @@ export default class ProfileEdit extends Component {
     handleSave(e) {
         e.preventDefault();
         this.personalInfoRef.current.validate();
+        this.experienceRef.current.validate();
     }
 
     handleCancel() {
