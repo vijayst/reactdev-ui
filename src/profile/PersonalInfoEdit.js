@@ -5,17 +5,45 @@ export default class PersonalInfoEdit extends Component {
     state = {};
 
     validate() {
-        const { firstName } = this.state;
+        const { firstName, lastName } = this.state;
         const firstNameError = !firstName ? 'Please enter first name' : '';
         this.setState({ firstNameError });
+        const lastNameError = !lastName ? 'Please enter last name' : '';
+        this.setState({ lastNameError });
+        return !firstNameError && !lastNameError;
+    }
+
+    getFormData() {
+        const { firstName, lastName, city, dob } = this.state;
+        return { firstName, lastName, city, dob };
     }
 
     handleFirstNameChange(e) {
         this.setState({ firstName: e.target.value });
     }
 
+    handleLastNameChange(e) {
+        this.setState({ lastName: e.target.value });
+    }
+
+    handleCityChange(e) {
+        this.setState({ city: e.target.value });
+    }
+
+    handleDOBChange(dob) {
+        this.setState({ dob });
+    }
+
     render() {
-        const { imageUrl, firstName, firstNameError } = this.state;
+        const {
+            imageUrl,
+            firstName,
+            firstNameError,
+            lastName,
+            lastNameError,
+            city,
+            dob
+        } = this.state;
         return (
             <div className="personal-info-edit-container">
                 <div className="photo">
@@ -53,17 +81,26 @@ export default class PersonalInfoEdit extends Component {
                 <div className="error-text">{firstNameError}</div>
                 <div>Last name:</div>
                 <div>
-                    <Input placeholder="Last name" />
+                    <Input
+                        placeholder="Last name"
+                        value={lastName}
+                        onChange={this.handleLastNameChange.bind(this)}
+                        className={lastNameError && 'error-control'}
+                    />
                 </div>
-                <div />
+                <div className="error-text">{lastNameError}</div>
                 <div>Email:</div>
                 <div>
-                    <Input placeholder="Email" />
+                    <Input placeholder="Email" disabled />
                 </div>
                 <div />
                 <div>City:</div>
                 <div>
-                    <Input placeholder="City" />
+                    <Input
+                        placeholder="City"
+                        value={city}
+                        onChange={this.handleCityChange.bind(this)}
+                    />
                 </div>
                 <div />
                 <div>Country:</div>
@@ -73,7 +110,11 @@ export default class PersonalInfoEdit extends Component {
                 <div />
                 <div>Date of Birth:</div>
                 <div>
-                    <DatePicker placeholder="Date of Birth" />
+                    <DatePicker
+                        placeholder="Date of Birth"
+                        value={dob}
+                        onChange={this.handleDOBChange.bind(this)}
+                    />
                 </div>
                 <div />
             </div>
