@@ -39,3 +39,12 @@
     grid-column-gap: 2rem;
     align-items: center;
 }
+
+.buttons {
+    margin: 2rem 0 0 2rem;
+}
+
+.buttons button {
+    margin-right: 1rem;
+    width: 8rem;
+}
