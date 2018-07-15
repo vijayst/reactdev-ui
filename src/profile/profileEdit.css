@@ -1,7 +1,7 @@
 .personal-info-edit-container {
     padding: 2rem;
     display: grid;
-    grid-template-columns: 20rem max-content 30rem;
+    grid-template-columns: 20rem max-content 30rem max-content;
     grid-row-gap: 1rem;
     grid-column-gap: 2rem;
     align-items: center;
