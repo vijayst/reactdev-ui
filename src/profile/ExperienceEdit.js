@@ -6,9 +6,33 @@ export default class ExperienceEdit extends Component {
     constructor() {
         super();
         this.state = {
-            professionalExperience: 'None',
+            experience: 'None',
             reactExperience: 'None'
         };
+    }
+
+    validate() {
+        return true;
+    }
+
+    getFormData() {
+        return this.state;
+    }
+
+    handleExperienceChange(experience) {
+        this.setState({ experience });
+    }
+
+    handleReactExperienceChange(reactExperience) {
+        this.setState({ reactExperience });
+    }
+
+    handleGithubUrlChange(e) {
+        this.setState({ githubUrl: e.target.value });
+    }
+
+    handleLinkedInUrlChange(e) {
+        this.setState({ linkedInUrl: e.target.value });
     }
 
     getProfessionalExperienceOptions() {
@@ -54,12 +78,15 @@ export default class ExperienceEdit extends Component {
               dataIndex: 'duration',
               key: 'duration'
           }];
+
+        const { experience, reactExperience, githubUrl, linkedInUrl } = this.state;
+
         return (
             <div className="experience-edit-container">
                 <div className="experience-grid">
                     <div>Professional Experience:</div>
                     <div>
-                        <Select style={{ width: 300 }}>
+                        <Select style={{ width: 300 }} value={experience} onChange={this.handleExperienceChange.bind(this)}>
                             {this.getProfessionalExperienceOptions().map(option => (
                                 <Select.Option key={option}>{option}</Select.Option>
                             ))}
@@ -67,16 +94,16 @@ export default class ExperienceEdit extends Component {
                     </div>
                     <div>React Experience:</div>
                     <div>
-                        <Select style={{ width: 300 }}>
+                        <Select style={{ width: 300 }} value={reactExperience} onChange={this.handleReactExperienceChange.bind(this)}>
                             {this.getReactExperienceOptions().map(option => (
                                 <Select.Option key={option}>{option}</Select.Option>
                             ))}
                         </Select>
                     </div>
                     <div>GitHub:</div>
-                    <div><Input placeholder="GitHub URL" /></div>
+                    <div><Input addonBefore="https://github.com/" placeholder="GitHub URL" value={githubUrl} onChange={this.handleGithubUrlChange.bind(this)} /></div>
                     <div>LinkedIn:</div>
-                    <div><Input placeholder="LinkedIn URL" /></div>
+                    <div><Input addonBefore="https://www.linkedin.com/in/" placeholder="LinkedIn URL" value={linkedInUrl} onChange={this.handleLinkedInUrlChange.bind(this)} /></div>
                 </div>
                 <div className="projects-section">
                     <h2>Projects</h2>
