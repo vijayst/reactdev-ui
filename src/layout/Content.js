@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Col } from 'antd';
 import Profile from '../profile/Profile';
 import ProfileEdit from '../profile/ProfileEdit';
 import { Switch, Route } from 'react-router-dom';
