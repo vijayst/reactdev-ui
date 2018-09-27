@@ -1,0 +1,16 @@
+a.link {
+    color: rgba(0,0,0,.56);
+    font-size: 1.6rem;
+    line-height: 1;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+a.link:hover {
+    color: rgba(0,0,0,.7);
+}
+
+a.link:active {
+    color: rgba(0,0,0,1);
+}

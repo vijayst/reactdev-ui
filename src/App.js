@@ -1,11 +1,8 @@
-import React from 'react'
-import {
-    BrowserRouter,
-    Switch,
-    Route
-} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Main from './layout/Main';
 import Callback from './Callback';
+import './css/common';
 
 const App = () => (
     <BrowserRouter>
@@ -16,6 +13,6 @@ const App = () => (
             </Switch>
         </div>
     </BrowserRouter>
-)
+);
 
 export default App;

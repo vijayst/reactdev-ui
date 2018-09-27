@@ -1,24 +1,30 @@
 .app {
+  min-width: 64rem;
   max-width: 148rem;
+  width: 100vw;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f8f8f8;
+  background-color: #fafafa;
   height: 8rem;
 }
 
 .sidebar {
-  background-color: #f0f0f0;
+  background-color: #fafafa;
   min-height: 100vh;
+  grid-column: 1 / 2;
 }
 
 .content {
   min-height: 100vh;
   border-right: 1px solid #f0f0f0;
+  grid-column: 2 / 5;
 }
 
 main {
@@ -50,9 +56,18 @@ main {
   width: 100%;
 }
 
-.intro-section {
+.sidebar__intro {
   padding: 2rem;
   font-size: 2rem;
   font-style: italic;
   font-weight: 300;
+}
+
+.sidebar__buttons {
+  padding: 2rem;
+  text-align: center;
+}
+
+.sidebar__buttons button:not(:last-child) {
+  margin-right: 2.4rem;
 }

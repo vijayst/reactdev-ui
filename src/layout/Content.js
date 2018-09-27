@@ -8,17 +8,23 @@ import requireAuth from './requireAuth';
 class Content extends Component {
     render() {
         return (
-            <Col span={18} className="content">
+            <div className="content">
                 <header className="header">
                     <h1>React Developers</h1>
                 </header>
                 <main>
                     <Switch>
-                        <Route path="/profile/edit" component={requireAuth(ProfileEdit)} />
-                        <Route path="/profile" component={requireAuth(Profile)} />
+                        <Route
+                            path="/profile/edit"
+                            component={requireAuth(ProfileEdit)}
+                        />
+                        <Route
+                            path="/profile"
+                            component={requireAuth(Profile)}
+                        />
                     </Switch>
                 </main>
-            </Col>
+            </div>
         );
     }
 }
