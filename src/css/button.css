@@ -6,19 +6,16 @@ button {
     font-size: 1.6rem;
     cursor: pointer;
     border: none;
-    border: 1px solid #fdd84c;
 }
 
-button:hover {
-    border: 1px solid #ffbb12;
+button:hover, button:focus {
     background-color: #ffbb12;
+}
+
+button:focus {
+    outline: none;
 }
 
 button:active {
     background-color: #edaa03;
-}
-
-button:focus {
-    border: 1px solid #edaa03;
-    outline: none;
 }
