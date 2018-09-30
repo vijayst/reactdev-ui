@@ -6,6 +6,7 @@ button {
     font-size: 1.6rem;
     cursor: pointer;
     border: none;
+    display: inline-block;
 }
 
 button:hover, button:focus {

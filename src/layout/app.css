@@ -1,4 +1,5 @@
 .app {
+  position: relative;
   min-width: 64rem;
   max-width: 148rem;
   width: 100vw;
@@ -8,11 +9,20 @@
 }
 
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  min-width: 64rem;
+  max-width: 148rem;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   background-color: #fafafa;
   height: 8rem;
+}
+
+.header h1 {
+  grid-column: 2 / 5;
+  padding-left: 5.6rem;
+  align-self: center;
 }
 
 .sidebar {
@@ -22,13 +32,21 @@
 }
 
 .content {
+  padding: 10rem 2rem 2rem 2rem;
   min-height: 100vh;
   border-right: 1px solid #f0f0f0;
   grid-column: 2 / 5;
+  display: flex;
 }
 
 main {
-  padding: 2rem;
+  flex: 1;
+}
+
+main.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sidebar__intro {
@@ -46,4 +64,12 @@ main {
 
 .sidebar__buttons button:not(:last-child) {
   margin-right: 2.4rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+}
+
+.ralign {
+  text-align: right;
 }

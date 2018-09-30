@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 class SideBar extends Component {
+    handleSignup(e) {
+        e.preventDefault();
+        this.props.history.push('/signup');
+    }
+
     render() {
         return (
             <div className="sidebar">
@@ -11,7 +16,9 @@ class SideBar extends Component {
                     peer developers.
                 </div>
                 <div className="sidebar__buttons">
-                    <button>Register</button>
+                    <button onClick={this.handleSignup.bind(this)}>
+                        Sign Up
+                    </button>
                     <button>Login</button>
                 </div>
             </div>
