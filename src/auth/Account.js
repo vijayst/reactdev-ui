@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Error from '../common/Error';
 
-export default class Email extends Component {
+export default class Account extends Component {
     state = {};
 
     handleNext(e) {
@@ -13,7 +13,7 @@ export default class Email extends Component {
             : 'Please enter a valid email address';
         this.setState({ emailError });
         if (!emailError) {
-            this.props.history.push('/signup/password');
+            this.props.history.push('/signup/profile');
         }
     }
 
@@ -24,12 +24,6 @@ export default class Email extends Component {
             <main className="centered">
                 <form className="form">
                     <div className="form__title">Sign Up</div>
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        className={emailError && 'error'}
-                        onChange={e => this.setState({ email: e.target.value })}
-                    />
                     <Error message={emailError} />
                     <input
                         type="text"
@@ -44,6 +38,12 @@ export default class Email extends Component {
                         onChange={e =>
                             this.setState({ lastName: e.target.value })
                         }
+                    />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        className={emailError && 'error'}
+                        onChange={e => this.setState({ email: e.target.value })}
                     />
                     <div className="mt24 ralign">
                         <button
