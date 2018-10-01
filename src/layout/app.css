@@ -73,3 +73,27 @@ h1, h2, h3, h4, h5, h6 {
 .ralign {
   text-align: right;
 }
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.mb8 {
+  margin-bottom: 8px;
+}
+
+.mt16 {
+  margin-top: 16px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
+.mt24 {
+  margin-top: 24px;
+}
+
+.mb24 {
+  margin-bottom: 24px;
+}
