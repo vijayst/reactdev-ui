@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Error from '../common/Error';
+import { connect } from 'react-redux';
+import { createAccount } from './actions';
 
-export default class Account extends Component {
+class Account extends Component {
     state = {};
 
     handleNext(e) {
         e.preventDefault();
-        const { email, password, repeat } = this.state;
+        const { firstName, lastName, email, password, repeat } = this.state;
         const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const emailError = emailRegex.test(email)
             ? ''
@@ -18,7 +20,7 @@ export default class Account extends Component {
         const repeatError = password !== repeat ? 'Passwords do not match' : '';
         this.setState({ emailError, passwordError, repeatError });
         if (!emailError && !passwordError && !repeatError) {
-            this.props.history.push('/signup/profile');
+            this.props.onAccountCreate(firstName, lastName, email, password);
         }
     }
 
@@ -91,3 +93,12 @@ export default class Account extends Component {
         );
     }
 }
+
+const dispatchProps = {
+    onAccountCreate: createAccount
+};
+
+export default connect(
+    null,
+    dispatchProps
+)(Account);

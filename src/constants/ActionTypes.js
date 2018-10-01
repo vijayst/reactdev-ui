@@ -1,7 +1,11 @@
 const ActionTypes = {
     SignUpPending: 'SIGNUP_PENDING',
     SignUpFulfilled: 'SIGNUP_FULFILLED',
-    SignUpRejected: 'SIGNUP_REJECTED'
+    UpdateProfilePending: 'UPDATE_PROFILE_PENDING',
+    UpdateProfileFulfilled: 'UPDATE_PROFILE_FULFILLED',
+    CreateAccountPending: 'CREATE_ACCOUNT_PENDING',
+    CreateAccountFulfilled: 'CREATE_ACCOUNT_FULFILLED',
+    CreateAccountRejected: 'CREATE_ACCOUNT_REJECTED'
 };
 
 export default ActionTypes;
