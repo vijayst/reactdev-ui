@@ -4,7 +4,7 @@ import Main from './layout/Main';
 import history from './lib/history';
 import { Provider } from 'react-redux';
 import store from './store/store';
-import './css/common';
+import './css/common.scss';
 
 const App = () => (
     <Provider store={store}>
