@@ -1,12 +1,15 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+const projectId = process.env.REACT_APP_PROJECT_ID;
 
 const config = {
-    apiKey: 'AIzaSyCXXxfqYFLUeM7w6WxOp5XyaZ2AqZteTFU',
-    authDomain: 'reactdev-1e1ea.firebaseapp.com',
-    databaseURL: 'https://reactdev-1e1ea.firebaseio.com',
-    projectId: 'reactdev-1e1ea',
-    storageBucket: 'reactdev-1e1ea.appspot.com',
-    messagingSenderId: '82202531094'
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: `${projectId}.firebaseapp.com`,
+    databaseURL: `https://${projectId}.firebaseio.com`,
+    projectId,
+    storageBucket: `${projectId}.appspot.com`,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_ID
 };
 
 firebase.initializeApp(config);
